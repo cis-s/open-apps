@@ -1,7 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_fund_create,fund_create,model_fund_collection,base.group_hr_user,1,1,1,1
-
-access_fund_expense,access_fund_expense,model_fund_expense,base.group_hr_user,1,1,1,1
-access_fund_current_balance,access_fund_current_balance,model_current_balance_report,base.group_hr_user,1,1,1,1
-
-access_see_own_fund,see_own_funds_payment,model_fund_collection,base.group_user,1,0,0,0
