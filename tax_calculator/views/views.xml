@@ -1,0 +1,55 @@
+<openerp>
+  <data>
+
+    <record model="ir.ui.view" id="sale_tax_computation_list_view">
+      <field name="name">Sales Tax</field>
+      <field name="model">tax_calculator</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="date_from"/>
+          <field name="date_to"/>
+          <field name="tax_amount"/>
+          <field name="total"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="sale_tax_computation_form_view">
+      <field name="name">Sales Tax</field>
+      <field name="model">tax_calculator</field>
+      <field name="arch" type="xml">
+        <header>
+            <button name="compute_tax" type="object" class="btn btn-primary" string="Compute Tax"/>
+        </header>
+        <form>
+          <sheet>
+            <group>
+            <group>
+              <field name="date_from"/>
+              <field name="tax_amount"/>
+              <field name="total_sales_done"/>
+            </group>             
+            <group>
+              <field name="date_to"/>
+              <field name="total"/>
+            </group>
+          </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+
+    <record model="ir.actions.act_window" id="tax_computation_action_window">
+      <field name="name">Tax Computation</field>
+      <field name="res_model">tax_calculator</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Tax Computation" id="tax_computation" groups="base.group_system" parent="account.menu_finance_reports"
+              action="tax_computation_action_window"/> 
+
+
+  </data>
+</openerp>
